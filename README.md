@@ -1,14 +1,14 @@
-# Proyecto final de Teoría de la Computación
+# Proyecto final de TeorÃ­a de la ComputaciÃ³n
 
 ## Integrantes
 
-- Jonathan Gregorio Gómez Benítez
-- Joshua Immanuel Meza Magaña
+- Jonathan Gregorio GÃ³mez BenÃ­tez
+- Joshua Immanuel Meza MagaÃ±a
 
 ## Roles
 
-Analizador léxico: **Joni**
-Analizador sintáctico: **Josh**
+- Analizador lÃ©xico: **Joni**
+- Analizador sintÃ¡ctico: **Josh**
 
 ## Fecha de entrega
 
