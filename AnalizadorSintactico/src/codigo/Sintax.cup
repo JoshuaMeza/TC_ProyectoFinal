@@ -1,0 +1,48 @@
+package codigo;
+
+import java_cup.runtime.Symbol;
+
+parser code
+{:
+    private Symbol s;
+    
+    public void syntax_error(Symbol s){
+        this.s = s;
+    }
+
+    public Symbol getS(){
+        return this.s;
+}
+:};
+
+terminal PROGRAMA, FINPROG, SI, ENTONCES, SINO, FINSI, REPITE, VECES, FINREP, IMPRIME, LEE, Identificador,
+    Numero, ERROR, OperadorRelacional, OperadorAritmetico, Comentario, Asignacion, Texto;
+non terminal PROG, SENTS, SENT, COMPARA, ELEM;
+
+start with PROG;
+
+PROG ::= 
+    PROGRAMA Identificador SENTS FINPROG |
+    Comentario PROGRAMA Identificador SENTS FINPROG
+;
+SENTS ::=   
+    SENT SENTS |
+    SENT  
+;
+SENT ::= 
+    Identificador Asignacion ELEM |
+    Identificador Asignacion ELEM OperadorAritmetico ELEM |
+    Identificador Asignacion Texto |
+    SI COMPARA ENTONCES SENTS SINO SENTS FINSI |
+    REPITE ELEM VECES SENTS FINREP| 
+    IMPRIME ELEM |
+    IMPRIME Texto |
+    LEE Identificador |
+    Comentario 
+;
+ELEM ::= 
+    Numero |
+    Identificador
+;
+COMPARA ::= Identificador OperadorRelacional ELEM
+;
